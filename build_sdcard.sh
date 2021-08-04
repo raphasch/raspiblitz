@@ -58,7 +58,7 @@ fi
 # If this parameter is set also the branch needs to be given (see next parameter).
 githubUser="$3"
 if [ ${#githubUser} -eq 0 ]; then
-  githubUser="rootzoll"
+  githubUser="raphasch"
 fi
 echo "3) will use GITHUB-USERNAME --> '${githubUser}'"
 
@@ -74,11 +74,11 @@ echo "4) will use GITHUB-BRANCH --> '${githubBranch}'"
 # 5th optional paramater: DISPLAY-CLASS
 # ----------------------------------------
 # Could be 'hdmi', 'headless' or 'lcd'
-# On 'false' the standard video output is used (HDMI) by default.
+# On 'false' headless by default.
 # https://github.com/rootzoll/raspiblitz/issues/1265#issuecomment-813369284
 displayClass="$5"
 if [ ${#displayClass} -eq 0 ] || [ "${displayClass}" == "false" ]; then
-  displayClass="hdmi"
+  displayClass="headless"
 fi
 if [ "${displayClass}" != "hdmi" ] && [ "${displayClass}" != "lcd" ] && [ "${displayClass}" != "headless" ]; then
   echo "ERROR: DISPLAY-CLASS parameter needs to be 'lcd', 'hdmi' or 'headless'"
@@ -107,11 +107,11 @@ fi
 # ---------------------------------------
 # could be 'false' or 'true' (default) or a valid WIFI country code like 'US' (default)
 # If 'false' WIFI will be deactivated by default
-# If 'true' WIFI will be activated by with default country code 'US'
+# If 'true' WIFI will be activated by with default country code 'DE'
 # If any valid wifi country code Wifi will be activated with that country code by default
 modeWifi="$7"
 if [ ${#modeWifi} -eq 0 ] || [ "${modeWifi}" == "true" ]; then
-  modeWifi="US"
+  modeWifi="DE"
 fi
 echo "7) will use WIFI --> '${modeWifi}'"
 
