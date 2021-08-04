@@ -74,11 +74,11 @@ echo "4) will use GITHUB-BRANCH --> '${githubBranch}'"
 # 5th optional paramater: DISPLAY-CLASS
 # ----------------------------------------
 # Could be 'hdmi', 'headless' or 'lcd'
-# On 'false' headless by default.
+# On 'false' hmdi by default.
 # https://github.com/rootzoll/raspiblitz/issues/1265#issuecomment-813369284
 displayClass="$5"
 if [ ${#displayClass} -eq 0 ] || [ "${displayClass}" == "false" ]; then
-  displayClass="headless"
+  displayClass="hdmi"
 fi
 if [ "${displayClass}" != "hdmi" ] && [ "${displayClass}" != "lcd" ] && [ "${displayClass}" != "headless" ]; then
   echo "ERROR: DISPLAY-CLASS parameter needs to be 'lcd', 'hdmi' or 'headless'"
